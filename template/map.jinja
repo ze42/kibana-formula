@@ -7,15 +7,22 @@
 {##
 Setup variable using grains['os_family'] based logic, only add key:values here
 that differ from whats in defaults.yaml
+
+Beware, the osmap is currently not used and contains fillers. See defaults.yaml.
+This is because OS-specific overrides are not currently looked after for /opt.
 ##}
 {% set os_family_map = salt['grains.filter_by']({
-        'Debian': {},
-        'Suse': {},
+        'Debian': {
+            "sourceInstallPath" : '/opt/kibana/',
+        },
+        'Suse': {
+            "sourceInstallPath" : '/opt/kibana/',
+        },
         'Arch': {
-            "pkg" : 'kibana-arch',
+            ""sourceInstallPath" : '/opt/kibana/',
         },
         'RedHat': {
-            "config": '/etc/kibana.conf',
+            "sourceInstallPath" : '/opt/kibana/',
         },
   }
   , grain="os_family"

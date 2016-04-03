@@ -1,3 +1,4 @@
 kibana:
   lookup:
     master: kibana-master
+  source: true

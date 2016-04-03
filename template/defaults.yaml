@@ -1,7 +1,19 @@
 # -*- coding: utf-8 -*-
 # vim: ft=yaml
 kibana:
-  pkg: kibana
-  config: '/etc/kibana'
+  pkg: kibana # This is not used
+  config: '/etc/kibana' # This is not used
+  sourceInstallPath : '/opt/kibana/'
+  source: true # Install from source
+  sources:
+    linux:
+      amd64:
+        baseURL: "https://download.elastic.co/kibana/kibana/"
+        tarball: "kibana-4.1.6-linux-x64.tar.gz"
+        hashfile: "kibana-4.1.6-linux-x64.tar.gz.sha1.txt"
+      x86:
+        baseURL: "https://download.elastic.co/kibana/kibana/"
+        tarball: "kibana-4.1.6-linux-x86.tar.gz"
+        hashfile: "kibana-4.1.6-linux-x86.tar.gz.sha1.txt"
   service:
     name: kibana
