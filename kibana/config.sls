@@ -5,8 +5,9 @@
 
 kibana-config:
   file.managed:
-    - name: {{ kibana.config }}
-    - source: salt://kibana/files/example.tmpl
+    - name: {{ kibana.configfile }}
     - mode: 644
     - user: root
     - group: root
+    - dataset: {{ kibana.config }}
+    - formatter: "YAML"

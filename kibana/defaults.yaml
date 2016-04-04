@@ -2,7 +2,7 @@
 # vim: ft=yaml
 kibana:
   pkg: kibana # This is not used
-  config: '/etc/kibana' # This is not used
+  configfile: '/opt/kibana/config/kibana.yml' # This is not used for the source install
   source: false # Install from source
   repoVersion: "4.5" # Elastic repo version
   sourceVersion: "4.1.6"
