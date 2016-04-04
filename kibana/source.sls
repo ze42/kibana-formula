@@ -1,23 +1,23 @@
 # Install Kibana from source
 {% from "kibana/map.jinja" import kibana with context %}
 
+{% if grains['osarch'] == 'amd64' %}
+{% set kibanaArchitecture = 'x64' %}
+{% else %}
+{% set kibanaArchitecture = 'x86' %}
+{% endif %}
+
 make-sure-kibana-opt-dir-exists:
   file.directory:
-    - name: {{kibana.sourceInstallPath}}
+    - name: {{kibana.sources.installPath}}
 
-download-kibana-sources-linux:
-  {% if grains['osarch'] == 'amd64' %}
+setup-kibana-sources-linux:
   archive.extracted:
-    - name: {{kibana.sourceInstallPath}}
-    - source: {{kibana.sources.baseURL}}kibana-{{kibana.sourceVersion}}-linux-x64.tar.gz
-    - source_hash: {{kibana.sources.baseURL}}kibana-{{kibana.sourceVersion}}-linux-x64.tar.gz.sha1.txt
+    - name: {{kibana.sources.installPath}}
+    - source: {{kibana.sources.baseURL}}kibana-{{kibana.sourceVersion}}-linux-{{ kibanaArchitecture }}.tar.gz
+    - source_hash: {{kibana.sources.baseURL}}kibana-{{kibana.sourceVersion}}-linux-{{ kibanaArchitecture }}.tar.gz.sha1.txt
     - archive_format: tar
-    - if_missing: {{kibana.sourceInstallPath}}kibana-{{kibana.sourceVersion}}-linux-x64
-  {% else %}
-  archive.extracted:
-    - name: {{kibana.sourceInstallPath}}
-    - source: {{kibana.sources.baseURL}}kibana-{{kibana.sourceVersion}}-linux-x86.tar.gz
-    - source_hash: {{kibana.sources.baseURL}}kibana-{{kibana.sourceVersion}}-linux-x86.tar.gz.sha1.txt
-    - archive_format: tar
-    - if_missing: {{kibana.sourceInstallPath}}kibana-{{kibana.sourceVersion}}-linux-x64
-  {% endif %}
+    - if_missing: {{kibana.sources.installPath}}kibana-{{kibana.sourceVersion}}-linux-{{ kibanaArchitecture }}
+  file.symlink:
+    - name: {{kibana.sources.installPath}}current
+    - target: {{kibana.sources.installPath}}kibana-{{kibana.sourceVersion}}-linux-{{ kibanaArchitecture }}

@@ -3,10 +3,10 @@
 kibana:
   pkg: kibana # This is not used
   config: '/etc/kibana' # This is not used
-  sourceInstallPath : '/opt/kibana/'
   source: true # Install from source
   sourceVersion: "4.1.6"
   sources:
+    installPath: '/opt/kibana/'
     baseURL: "https://download.elastic.co/kibana/kibana/"
   service:
     name: kibana
