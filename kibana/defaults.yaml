@@ -5,15 +5,8 @@ kibana:
   config: '/etc/kibana' # This is not used
   sourceInstallPath : '/opt/kibana/'
   source: true # Install from source
+  sourceVersion: "4.1.6"
   sources:
-    linux:
-      amd64:
-        baseURL: "https://download.elastic.co/kibana/kibana/"
-        tarball: "kibana-4.1.6-linux-x64.tar.gz"
-        hashfile: "kibana-4.1.6-linux-x64.tar.gz.sha1.txt"
-      x86:
-        baseURL: "https://download.elastic.co/kibana/kibana/"
-        tarball: "kibana-4.1.6-linux-x86.tar.gz"
-        hashfile: "kibana-4.1.6-linux-x86.tar.gz.sha1.txt"
+    baseURL: "https://download.elastic.co/kibana/kibana/"
   service:
     name: kibana
