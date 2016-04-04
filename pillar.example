@@ -1,6 +1,6 @@
 kibana:
   lookup:
-    master: kibana-master
-  source: true
+    sourceInstallPath: "/opt/kibana/"
+  source: false
   config:
     elasticsearch.url: "http://localhost:9200"
