@@ -8,6 +8,9 @@
 include:
   - kibana.source
 {%- else %}
+include:
+  - kibana.repo
+
 kibana-pkg:
   pkg.installed:
     - name: {{ kibana.pkg }}

@@ -3,7 +3,8 @@
 kibana:
   pkg: kibana # This is not used
   config: '/etc/kibana' # This is not used
-  source: true # Install from source
+  source: false # Install from source
+  repoVersion: "4.5" # Elastic repo version
   sourceVersion: "4.1.6"
   sources:
     installPath: '/opt/kibana/'
