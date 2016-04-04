@@ -4,7 +4,7 @@
 {% from "kibana/map.jinja" import kibana with context %}
 
 kibana-config:
-  file.managed:
+  file.serialize:
     - name: {{ kibana.configfile }}
     - mode: 644
     - user: root
