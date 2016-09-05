@@ -10,3 +10,4 @@ kibana-repo:
     - key_url: https://packages.elastic.co/GPG-KEY-elasticsearch
     - require_in:
       - pkg: kibana
+    - clean_file: true
