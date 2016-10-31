@@ -7,8 +7,10 @@
 include:
   - kibana.source
 {%- else %}
+{%- if kibana.use_upstream_repo %}
 include:
   - kibana.repo
+{%- endif %}
 
 kibana-pkg:
   pkg.installed:
