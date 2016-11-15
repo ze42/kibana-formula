@@ -1,4 +1,5 @@
 kibana:
+  repoVersion: '5'
   lookup:
     sourceInstallPath: "/opt/kibana/"
   source: false

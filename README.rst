@@ -2,7 +2,7 @@
 kibana-formula
 ================
 
-This sets up kibana.
+This sets up kibana. Supports 2.x and 5.x.
 
 
     See the full `Salt Formulas installation and usage instructions
