@@ -20,6 +20,16 @@ platforms:
 
 suites:
   - name: default
+  - name: version-5.0
+    provisioner:
+      pillars:
+        top.sls:
+          base:
+            '*':
+              - kibana
+        kibana.sls:
+          kibana:
+            repoVersion: '5'
 
 verifier:
   name: shell
