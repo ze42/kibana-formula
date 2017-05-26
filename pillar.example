@@ -5,3 +5,5 @@ kibana:
   source: false
   config:
     elasticsearch.url: "http://localhost:9200"
+  plugins:
+    x-pack: x-pack
