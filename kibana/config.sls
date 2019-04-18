@@ -12,7 +12,7 @@ kibana-config:
     - mode: 644
     - user: root
     - group: root
-    - dataset: {{ kibana.config|tojson }}
+    - dataset: {{ kibana.config|json }}
     - formatter: "YAML"
     - require:
       - sls: kibana.install
