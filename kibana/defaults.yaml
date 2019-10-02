@@ -11,5 +11,4 @@ kibana:
     baseURL: "https://download.elastic.co/kibana/kibana/" # in April 2016 this was where elastico had the downloads
   service:
     name: kibana # The package installs this as the service name by default, but source doesn't
-  config:
-    elasticsearch.url: "http://localhost:9200"
+  config: {}
